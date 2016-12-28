@@ -24,6 +24,7 @@ namespace HENRIKBRAUNE\SeoBasicsPluginSitemap\Hooks;
      *
      *  This copyright notice MUST APPEAR in all copies of the script!
      ***************************************************************/
+use B13\SeoBasics\Controller\SitemapController;
 
 /**
  *
@@ -32,7 +33,7 @@ namespace HENRIKBRAUNE\SeoBasicsPluginSitemap\Hooks;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Sitemap extends \tx_seobasics_sitemap {
+class Sitemap extends SitemapController {
 
     /**
      * @param array $params
