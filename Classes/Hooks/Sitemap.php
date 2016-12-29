@@ -46,6 +46,10 @@ class Sitemap extends SitemapController {
 
             if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded(substr($plugin, 0, -1))) {
                 $where = 'hidden = 0 AND deleted = 0';
+                // We only want internal news records in the sitemap:
+                if($plugin == 'news.') {
+                    $where .= ' AND type = 0';
+                }
                 $where .= (isset($configuration['where'])) ? ' AND ' . $configuration['where'] : '';
                 $result = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
                     implode(',', $configuration['fields.']),
